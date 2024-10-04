@@ -1,0 +1,57 @@
+{
+  "name": "lintastic",
+  "version": "1.0.0",
+  "description": "A sample project with ESLint configuration",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest", // Si estás usando Jest para pruebas
+    "build": "tsc" // Si usas TypeScript
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tu-usuario/my-project.git"
+  },
+  "keywords": [],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "typescript": "^4.0.0",
+    "jest": "^27.0.0" // Si usas Jest para pruebas
+  },
+  "dependencies": {
+    // Aquí puedes agregar tus dependencias de producción
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "no-console": "warn",
+      "semi": ["error", "always"]
+    }
+  }
+}
