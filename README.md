@@ -1,4 +1,4 @@
-# lintastic-config
+# Lintastic
 
 Una configuración de linting personalizable y extensible para mejorar la calidad del código en tus proyectos JavaScript y TypeScript.
 
