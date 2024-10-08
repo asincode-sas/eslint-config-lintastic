@@ -27,7 +27,7 @@ npm install --save-dev https://github.com/asincode-sas/lintastic.git
 
 ```javascript
 module.exports = {
-  extends: 'lintastic-config',
+  extends: 'lintastic',
 };
 ```
 
@@ -35,7 +35,7 @@ module.exports = {
 
 ```javascript
 module.exports = {
-  extends: 'lintastic-config',
+  extends: 'lintastic',
 };
 ```
 
