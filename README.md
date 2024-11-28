@@ -4,7 +4,7 @@ Una configuración de linting personalizable y extensible para mejorar la calida
 
 ## Introducción
 
-`lintastic-config` es una solución diseñada para estandarizar y optimizar el proceso de linting en tus proyectos. Este repositorio proporciona una configuración de ESLint que se adapta a las mejores prácticas de la comunidad y puede ser fácilmente ajustada según tus necesidades.
+`lintastic` es una solución diseñada para estandarizar y optimizar el proceso de linting en tus proyectos. Este repositorio proporciona una configuración de ESLint que se adapta a las mejores prácticas de la comunidad y puede ser fácilmente ajustada según tus necesidades.
 
 ## Características
 
@@ -15,19 +15,19 @@ Una configuración de linting personalizable y extensible para mejorar la calida
 
 ## Instalación
 
-Para usar `lintastic-config` en tu proyecto, sigue estos pasos:
+Para usar `lintastic` en tu proyecto, sigue estos pasos:
 
 1. **Instala ESLint**:
 
 ```bash
-npm install --save-dev https://github.com/asincode-sas/lintastic.git
+npm install --save-dev https://github.com/asincode-sas/eslint-config-lintastic.git
 ```
 
 2. ** Instala `lintastic`:**
 
 ```javascript
 module.exports = {
-  extends: 'lintastic',
+  extends: "lintastic",
 };
 ```
 
@@ -35,7 +35,7 @@ module.exports = {
 
 ```javascript
 module.exports = {
-  extends: 'lintastic',
+  extends: "lintastic",
 };
 ```
 

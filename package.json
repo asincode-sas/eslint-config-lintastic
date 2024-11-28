@@ -1,22 +1,33 @@
 {
-  "name": "lintastic",
+  "name": "eslint-config-lintastic",
   "version": "1.0.0",
   "description": "Eslint Remoto con las reglas unificadas de Asincode",
-  "main": "lib/index.js",
+  "main": "config/index.js",
+  "type": "module",
   "scripts": {
     "lint": "eslint ."
   },
+  "imports": {
+    "#*": "./src/*"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asincode-sas/lintastic.git"
+    "url": "git+https://github.com/asincode-sas/eslint-config-lintastic.git"
   },
   "keywords": [],
   "author": "Habid Manzur <hmanzur>",
   "license": "MIT",
-  "devDependencies": {
-    "@eslint/markdown": "^6.2.0",
-    "eslint": "^9.12.0",
-    "eslint-plugin-css": "^0.11.0",
-    "eslint-plugin-jsdoc": "^50.3.1"
+  "dependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-editorconfig": "^4.0.3",
+    "eslint-plugin-force-theme-colors": "^1.1.1",
+    "eslint-plugin-jsdoc": "^50.6.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "eslint-plugin-readable-tailwind": "^1.8.2",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "globals": "^15.12.0"
   }
 }
