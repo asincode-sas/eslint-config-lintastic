@@ -28,7 +28,10 @@ npm install --save-dev eslint https://github.com/asincode-sas/eslint-config-lint
 ```javascript
 // Extendida
 import { react } from 'eslint-config-lintastic';
-export default react;
+export default {
+  ...react,
+  // Custom config, plugins & rules
+};
 
 // Simplificada
 export { react as default } from 'eslint-config-lintastic';
