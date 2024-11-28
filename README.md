@@ -26,9 +26,14 @@ npm install --save-dev eslint https://github.com/asincode-sas/eslint-config-lint
 2. **Crea o modifica  el archivo de configuración (`.eslint.config.js`) en la raíz de tu proyecto y extiende la configuración:**
 
 ```javascript
+// Extendida
 import { react } from 'eslint-config-lintastic';
 export default react;
+
+// Simplificada
+export { react as default } from 'eslint-config-lintastic';
 ```
+
 
 | Configuraciones disponibles: `react`, `reactTailwind`, `reactBoostrap`, `node`, `nodeExpress` 
 
