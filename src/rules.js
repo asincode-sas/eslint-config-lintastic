@@ -53,6 +53,10 @@ export default {
         {
           "name": "nodemon",
           "message": "Evita usar nodemon. Usa el flag `--watch` con Node.js nativo o herramientas modernas como PM2."
+        },
+        {
+          "name": "morgan",
+          "message": "Evita usar morgan. Usa el flag `--watch` con Node.js nativo o herramientas modernas como PM2."
         }
       ],
       "patterns": [{
