@@ -6,8 +6,9 @@ import rules from "#rules.js";
 /** @type {import("eslint").Linter.Config[]} */
 export default [
   {
+    name: 'Rules for js and ts files',
     files:["**/*.{js,ts}"], // Aplica a todos los archivos .js
-    ...js.configs.recommended,
+    ...js.configs.all,
     languageOptions: {
       sourceType: "module", // Usa scripts si no estas usando modulos
       globals: {
@@ -51,6 +52,7 @@ export default [
   },
   //Configuracion de pruebas
   {
+    name: 'Rules for test files',
     files: ["**/*.test.js", "*/tests/**/*.js", "*/_tests_/**/*.js"],
     languageOptions: {
       globals: {

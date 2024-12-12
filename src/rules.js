@@ -4,7 +4,16 @@ export default {
   "prefer-const": "error", //Recomendar usar const donde sea posible
   "eqeqeq": "error", //Usar siempre === en lugar de ==
   "strict": ["error", "global"], //Aplicar modo estricto en el entorno global
-  "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+  "no-unused-vars": [
+    "error",
+    {
+      "vars": "all",
+      "args": "after-used",
+      "ignoreRestSiblings": false,
+      "varsIgnorePattern": "^_",
+      "argsIgnorePattern": "^_"
+    }
+  ],
   "jsdoc/require-example": [
     "error",
     {
@@ -35,28 +44,40 @@ export default {
     {
       "paths": [
         {
-          "name": "moment",
-          "message": "Moment.js está deprecado. Usa alternativas como date-fns o dayjs."
-        },
-        {
-          "name": "jquery",
-          "message": "jQuery ya no se recomienda. Usa vanilla JavaScript o frameworks modernos como React o Vue."
-        },
-        {
-          "name": "jest",
-          "message": "En este proyecto usamos Node.js test runner o Vitest. Evita usar Jest."
+          "name": "date-fns",
+          "message": "El uso de 'date-fns' no está recomendado. Consulta https://youmightnotneed.com/date-fns para alternativas más ligeras o nativas."
         },
         {
           "name": "dotenv",
-          "message": "Evita usar dotenv. Usa variables de entorno nativas de Node.js mediante process.env y configura tus entornos adecuadamente."
+          "message": "Evita usar 'dotenv'. Usa variables de entorno nativas de Node.js mediante 'process.env' y configura tus entornos adecuadamente."
         },
         {
-          "name": "nodemon",
-          "message": "Evita usar nodemon. Usa el flag `--watch` con Node.js nativo o herramientas modernas como PM2."
+          "name": "jest",
+          "message": "Evita usar 'jest'. Consulta https://pawelgrzybek.com/you-might-not-need-jest-the-node-js-native-test-runner-is-great/ para saber más"
+        },
+        {
+          "name": "jquery",
+          "message": "El uso de 'jQuery' ya no se recomienda. Usa vanilla JavaScript o frameworks modernos como React o Vue. Consulta https://youmightnotneedjquery.com/."
+        },
+        {
+          "name": "lodash",
+          "message": "El uso de 'lodash' no está recomendado. Consulta https://youmightnotneed.com/lodash para ejemplos de reemplazo."
+        },
+        {
+          "name": "moment",
+          "message": "El uso de 'moment.js' está deprecado. Consulta https://github.com/you-dont-need/You-Dont-Need-Momentjs para alternativas modernas."
         },
         {
           "name": "morgan",
-          "message": "Evita usar morgan. Usa el flag `--watch` con Node.js nativo o herramientas modernas como PM2."
+          "message": "Evita usar 'morgan'. Usa herramientas más modernas o configura el registro de logs de forma personalizada con Node.js nativo o alternativas como Winston o Pino."
+        },
+        {
+          "name": "nodemon",
+          "message": "Evita usar 'nodemon'. Usa el flag `--watch` con Node.js nativo o herramientas modernas como PM2. Consulta https://pawelgrzybek-com.translate.goog/til-node-v18-11-0-comes-with-a-watch-mode-so-you-might-not-need-nodemon/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc para saber más"
+        },
+        {
+          "name": "sort-by",
+          "message": "El uso de 'sort-by' no está recomendado. Considera implementar funciones nativas de ordenación o usar alternativas modernas."
         }
       ],
       "patterns": [{
