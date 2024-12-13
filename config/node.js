@@ -1,4 +1,5 @@
 import js from "@eslint/js";
+import tseslint from "typescript-eslint";
 
 import plugins from "#plugins.js";
 import rules from "#rules.js";
@@ -10,57 +11,51 @@ export default [
     files:["**/*.{js,ts}"], // Aplica a todos los archivos .js
     ...js.configs.all,
     languageOptions: {
-      sourceType: "module", // Usa scripts si no estas usando modulos
+      sourceType: "module", // Usa módulos
       globals: {
-        node: true
+        node: true, // Define 'node' como global
       },
     },
     plugins,
-    rules: {
-      ...rules,
-      "no-console": "off", // Permitir el uso de console.log - util para desarrollo
-      "no-var": "error", // Fomentar el uso de let y const
-      "prefer-const": "error", // Recomendar usar const donde sea posible
-      "eqeqeq": "error", // Usar siempre === en lugar de ==
-      "strict": ["error", "global"], // Aplicar modo estricto en el entorno global
-      "jsdoc/require-example": [
-        "error",
-        {
-          contexts: [
-            "FunctionDeclaration",
-            "MethodDefinition",
-            "ClassDeclaration",
-            "ArrowFunctionExpression",
-            "FunctionExpression",
-          ],
-        },
-      ],
-      //Verificacion adicional para los JSDoc
-      "jsdoc/check-alignment": "warn", //Alineacion de los comentarios
-      "jsdoc/check-param-names": "error", //Nombre de paramentros correcto
-      "jsdoc/check-tag-names": "error", //Etiquetas validas
-      "jsdoc/check-types": "warn", //Tipos de parametros y retornos validos
-      "jsdoc/require-param": "error", //Documentacion de parametros requerida
-      "jsdoc/require-param-description": "warn", //Descripcion para cada parametro
-      "jsdoc/require-param-type": "error", //Tipo requerido para cada parametro
-      "jsdoc/require-returns": "error", //Documentacion de valor de retorno requerida
-      "jsdoc/require-returns-description": "warn", //Descripcion para el retorno
-      "jsdoc/require-returns-type": "error", //Tipo requerido para el retorno
-      "jsdoc/require-jsdoc": "off",
-      "jsdoc/require-example": "off",
-    },
+    rules,
   },
-  //Configuracion de pruebas
   {
-    name: 'Rules for test files',
-    files: ["**/*.test.js", "*/tests/**/*.js", "*/_tests_/**/*.js"],
+    name: 'Rules for ts files',
+    files: ["**/*.{ts,tsx}"], // Aplica a archivos .ts y .tsx
+    plugins: {
+      ...plugins,
+      '@typescript-eslint': tseslint.plugin,
+    },
     languageOptions: {
-      globals: {
-        asserts: true
+      sourceType: 'module',
+      parser: tseslint.parser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        warnOnUnsupportedTypeScriptVersion: false,
       },
     },
     rules: {
-      "no-unused-expressions": "off" // A menudo util en pruebas
+      ...rules,
+      '@typescript-eslint/no-empty-function': 0,
+      '@typescript-eslint/no-explicit-any': 0,
+      '@typescript-eslint/no-unused-vars': 0,
+    }
+  },
+  {
+    name: 'Rules for test files',
+    files: ["**/*.test.js", "*/tests/**/*.js", "*/_tests_/**/*.js"],
+    files: [
+      "**/*.{test.js,test.ts,test.jsx,test.tsx}",
+      "*/tests/**/*.{js,ts,jsx,tsx}",
+      "*/_tests_/**/*.{js,ts,jsx,tsx}"
+    ],
+    languageOptions: {
+      globals: {
+        asserts: true,
+      },
+    },
+    rules: {
+      "no-unused-expressions": "off", // A menudo útil en pruebas
     },
   },
 ];
