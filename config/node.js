@@ -8,7 +8,7 @@ import rules from "#rules.js";
 export default [
   {
     name: 'Rules for js and ts files',
-    files: ["**/*.{js}"], // Aplica a todos los archivos .js y .ts
+    files:["**/*.{js,ts}"], // Aplica a todos los archivos .js
     ...js.configs.all,
     languageOptions: {
       sourceType: "module", // Usa módulos
@@ -43,11 +43,12 @@ export default [
   },
   {
     name: 'Rules for test files',
+    files: ["**/*.test.js", "*/tests/**/*.js", "*/_tests_/**/*.js"],
     files: [
       "**/*.{test.js,test.ts,test.jsx,test.tsx}",
       "*/tests/**/*.{js,ts,jsx,tsx}",
       "*/_tests_/**/*.{js,ts,jsx,tsx}"
-    ], // Archivos de pruebas para js, ts, jsx y tsx
+    ],
     languageOptions: {
       globals: {
         asserts: true,
