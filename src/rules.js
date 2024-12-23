@@ -72,8 +72,12 @@ export default {
           "message": "Evita usar 'morgan'. Usa herramientas más modernas o configura el registro de logs de forma personalizada con Node.js nativo o alternativas como Winston o Pino."
         },
         {
-          "name": "nodemon",
-          "message": "Evita usar 'nodemon'. Usa el flag `--watch` con Node.js nativo o herramientas modernas como PM2. Consulta https://pawelgrzybek-com.translate.goog/til-node-v18-11-0-comes-with-a-watch-mode-so-you-might-not-need-nodemon/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc para saber más"
+          "name": "numeral",
+          "message": "Evita usar 'numeral.js', ya que no se actualiza desde 2017. Considera opciones modernas como la API Intl nativa de JavaScript o librerías activas como numbro. Consulta https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Intl para más detalles."
+        },
+        {
+          "name": "numeral",
+          "message": "
         },
         {
           "name": "sort-by",
