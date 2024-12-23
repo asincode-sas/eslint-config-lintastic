@@ -76,10 +76,6 @@ export default {
           "message": "Evita usar 'numeral.js', ya que no se actualiza desde 2017. Considera opciones modernas como la API Intl nativa de JavaScript o librerías activas como numbro. Consulta https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Intl para más detalles."
         },
         {
-          "name": "numeral",
-          "message": "
-        },
-        {
           "name": "sort-by",
           "message": "El uso de 'sort-by' no está recomendado. Considera implementar funciones nativas de ordenación o usar alternativas modernas."
         }
