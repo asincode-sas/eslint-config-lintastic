@@ -43,7 +43,6 @@ export default [
   },
   {
     name: 'Rules for test files',
-    files: ["**/*.test.js", "*/tests/**/*.js", "*/_tests_/**/*.js"],
     files: [
       "**/*.{test.js,test.ts,test.jsx,test.tsx}",
       "*/tests/**/*.{js,ts,jsx,tsx}",
