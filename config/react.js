@@ -43,5 +43,10 @@ export default [
         { allowConstantExport: true },
       ]
     },
+    settings: {
+      react: {
+        version: "detect"
+      }
+    }
   },
 ];
