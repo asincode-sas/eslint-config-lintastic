@@ -4,6 +4,7 @@ export default {
   "prefer-const": "error", //Recomendar usar const donde sea posible
   "eqeqeq": "error", //Usar siempre === en lugar de ==
   "strict": ["error", "global"], //Aplicar modo estricto en el entorno global
+  'no-useless-catch': 'error',
   "no-unused-vars": [
     "error",
     {
