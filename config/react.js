@@ -11,7 +11,7 @@ import rules from "#rules.js";
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
-  { ignores: ["dist", "build", "coverage", ".*"] },
+  { ignores: ["dist", "build", "coverage"] },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
