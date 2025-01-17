@@ -1,4 +1,4 @@
-
+import tseslint from 'typescript-eslint';
 
 import plugins from "#plugins.js";
 import { rulesJS, rulesTS } from '#rules.js'
@@ -21,10 +21,16 @@ export default [
     rules: rulesJS,
   },
   {
+    ...tseslint.configs.strict,
     name: 'Rules ts files',
     files: ["**/*.ts"],
+    languageOptions,
     plugins,
-    rules: rulesTS,
+    rules: {
+      ...tseslint.configs.strict.rules,
+      ...rulesJS,
+      ...rulesTS
+    },
   },
   ...tests
 ];

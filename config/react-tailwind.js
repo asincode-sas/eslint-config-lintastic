@@ -10,9 +10,11 @@ export default [
   {
     ...react,
     plugins: {
+      ...react.plugins,
       "readable-tailwind": eslintPluginReadableTailwind
     },
     rules: {
+      ...react.rules,
       // enable all recommended rules to warn
       ...eslintPluginReadableTailwind.configs.warning.rules,
       // enable all recommended rules to error
