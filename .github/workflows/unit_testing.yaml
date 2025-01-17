@@ -15,8 +15,7 @@ jobs:
     uses: asincode-sas/actions/.github/workflows/test-node.yaml@main
     with:
       ref: ${{ github.ref }}
-    secrets: 
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    secrets: inherit
 
   # release:
   #   name: Create New Release
