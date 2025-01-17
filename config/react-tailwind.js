@@ -1,5 +1,5 @@
 import tailwindcss from "eslint-plugin-tailwindcss";
-import readableTailwind from "eslint-plugin-readable-tailwind";
+import eslintPluginReadableTailwind from "eslint-plugin-readable-tailwind";
 
 import base from "./react.js";
 
@@ -9,7 +9,23 @@ const [react, tests] = base;
 export default [
   {
     ...react,
-    ...tailwind.configs["flat/recommended"]
+    ...tailwindcss.configs["flat/recommended"],
+    ...{
+      plugins: {
+        "readable-tailwind": eslintPluginReadableTailwind
+      }
+    },
+    ...{
+      rules: {
+        // enable all recommended rules to warn
+        ...eslintPluginReadableTailwind.configs.warning.rules,
+        // enable all recommended rules to error
+        ...eslintPluginReadableTailwind.configs.error.rules,
+
+        // or configure rules individually
+        "readable-tailwind/multiline": ["warn", { printWidth: 100 }]
+      }
+    }
   },
   tests
 ]
