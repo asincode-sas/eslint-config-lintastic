@@ -1,23 +1,27 @@
-import tailwindcss from "eslint-plugin-tailwindcss";
-import readableTailwind from "eslint-plugin-readable-tailwind";
+import tailwind from "eslint-plugin-tailwindcss";
+import eslintPluginReadableTailwind from "eslint-plugin-readable-tailwind";
 
-import config from "./react.js";
+import base from "./react.js";
 
-const [react, ...rest] = config;
+const [react, tests] = base;
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
   {
     ...react,
     plugins: {
-      tailwindcss,
-      "readable-tailwind": readableTailwind,
+      "readable-tailwind": eslintPluginReadableTailwind
     },
     rules: {
-      tailwindcss: {
-        callees: ["classNames"],
-      }
+      // enable all recommended rules to warn
+      ...eslintPluginReadableTailwind.configs.warning.rules,
+      // enable all recommended rules to error
+      ...eslintPluginReadableTailwind.configs.error.rules,
+
+      // or configure rules individually
+      "readable-tailwind/multiline": ["warn", { printWidth: 100 }]
     }
   },
-  ...rest
-];
+  ...tailwind.configs["flat/recommended"],
+  tests
+]
