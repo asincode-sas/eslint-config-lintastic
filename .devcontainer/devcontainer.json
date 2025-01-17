@@ -1,11 +1,16 @@
 {
-  "name": "My Node.js 22 Project",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bullseye",
-  "features": {
-    "git": true
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 2
   },
-  "postCreateCommand": "npm install",
-  "forwardPorts": [
-    3000
-  ]
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install",
+  "postCreateCommand": "",
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [3000]
 }
