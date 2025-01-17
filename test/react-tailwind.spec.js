@@ -14,7 +14,7 @@ describe('React Tailwind', () => {
     assert.ok(tests, 'No cuenta con el bloque de Testing');
 
     const { plugins, rules, settings } = react;
-
+ 
     // Validación de plugins
     assert.ok(plugins['react'], 'No cuenta con el el plugin de react');
     assert.ok(plugins['readable-tailwind'], 'No cuenta con el el plugin de readable-tailwind');
