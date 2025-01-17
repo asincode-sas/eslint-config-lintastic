@@ -3,26 +3,21 @@ import readableTailwind from "eslint-plugin-readable-tailwind";
 
 import config from "./react.js";
 
-const [ignores, rulesets] = config;
-
-rulesets.settings = {
-  ...rulesets.settings,
-  tailwindcss: {
-    callees: ["classNames"],
-  }
-}
-
-rulesets.plugins = {
-  ...rulesets.plugins,
-  tailwindcss,
-  "readable-tailwind": readableTailwind,
-}
-
-rulesets.rules = {
-  ...rulesets.rules
-}
+const [react, ...rest] = config;
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
-  ignores, rulesets
-]
+  {
+    ...react,
+    plugins: {
+      tailwindcss,
+      "readable-tailwind": readableTailwind,
+    },
+    rules: {
+      tailwindcss: {
+        callees: ["classNames"],
+      }
+    }
+  },
+  ...rest
+];

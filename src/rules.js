@@ -1,4 +1,7 @@
-export default {
+import js from "@eslint/js";
+
+export const rulesJS = {
+  ...js.configs.all,
   "no-console": "off", //Permitir el uso de console.log - util para desarrollo
   "no-var": "error", //Fomentar el uso de let y const
   "prefer-const": "error", //Recomendar usar const donde sea posible
@@ -87,3 +90,14 @@ export default {
     }
   ]
 };
+
+export const rulesTS = {
+  '@typescript-eslint/no-empty-function': 0,
+  '@typescript-eslint/no-explicit-any': 0,
+  '@typescript-eslint/no-unused-vars': 0,
+};
+
+export default {
+  ...rulesJS,
+  ...rulesTS
+}
