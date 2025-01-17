@@ -1,0 +1,11 @@
+{
+  "name": "My Node.js 22 Project",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bullseye",
+  "features": {
+    "git": true
+  },
+  "postCreateCommand": "npm install",
+  "forwardPorts": [
+    3000
+  ]
+}

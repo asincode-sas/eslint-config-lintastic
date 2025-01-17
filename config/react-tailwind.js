@@ -9,23 +9,19 @@ const [react, tests] = base;
 export default [
   {
     ...react,
-    ...tailwindcss.configs["flat/recommended"],
-    ...{
-      plugins: {
-        "readable-tailwind": eslintPluginReadableTailwind
-      }
+    plugins: {
+      "readable-tailwind": eslintPluginReadableTailwind
     },
-    ...{
-      rules: {
-        // enable all recommended rules to warn
-        ...eslintPluginReadableTailwind.configs.warning.rules,
-        // enable all recommended rules to error
-        ...eslintPluginReadableTailwind.configs.error.rules,
+    rules: {
+      // enable all recommended rules to warn
+      ...eslintPluginReadableTailwind.configs.warning.rules,
+      // enable all recommended rules to error
+      ...eslintPluginReadableTailwind.configs.error.rules,
 
-        // or configure rules individually
-        "readable-tailwind/multiline": ["warn", { printWidth: 100 }]
-      }
+      // or configure rules individually
+      "readable-tailwind/multiline": ["warn", { printWidth: 100 }]
     }
   },
+  ...tailwind.configs["flat/recommended"],
   tests
 ]

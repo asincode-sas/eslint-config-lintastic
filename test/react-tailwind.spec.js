@@ -5,7 +5,7 @@ import { reactTailwind } from "../config/index.js"
 
 describe('React Tailwind', () => {
   it('Sould have well formed config', () => {
-    console.log('Validating', JSON.stringify(reactTailwind));
+    console.log('Validating', reactTailwind);
     
     const [react, tests] = reactTailwind;
 
