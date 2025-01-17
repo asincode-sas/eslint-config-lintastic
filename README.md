@@ -1,5 +1,7 @@
 # Lintastic
 
+[![.github/workflows/unit_testing.yaml](https://github.com/asincode-sas/eslint-config-lintastic/actions/workflows/unit_testing.yaml/badge.svg)](https://github.com/asincode-sas/eslint-config-lintastic/actions/workflows/unit_testing.yaml)
+
 Una configuración de linting personalizable y extensible para mejorar la calidad del código en tus proyectos JavaScript y TypeScript.
 
 ## Introducción
@@ -38,7 +40,7 @@ export { react as default } from 'eslint-config-lintastic';
 ```
 
 
-| Configuraciones disponibles: `react`, `reactTailwind`, `reactBoostrap`, `node`, `nodeExpress` 
+| Configuraciones disponibles: `react`, `reactTailwind`, `node` y `node` para proyectos de sólo pruebas
 
 ## Uso
 
