@@ -1,12 +1,13 @@
 import js from "@eslint/js";
 
 export const rulesJS = {
-  ...js.configs.all,
-  "no-console": "off", //Permitir el uso de console.log - util para desarrollo
-  "no-var": "error", //Fomentar el uso de let y const
-  "prefer-const": "error", //Recomendar usar const donde sea posible
-  "eqeqeq": "error", //Usar siempre === en lugar de ==
-  "strict": ["error", "global"], //Aplicar modo estricto en el entorno global
+  ...js.configs.all.rules,
+  "no-console": "off",
+  "no-var": "error", 
+  "prefer-const": "error", 
+  "eqeqeq": "error",
+  "strict": ["error", "global"], 
+  'no-useless-catch': 'error',
   "no-unused-vars": [
     "error",
     {

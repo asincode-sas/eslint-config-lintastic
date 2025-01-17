@@ -8,19 +8,19 @@ import forceThemeColors from "eslint-plugin-force-theme-colors";
 
 import plugins from "#plugins.js";
 import rules from "#rules.js";
-import tests from './tests.js';
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
+  { ignores: ["dist", "build", "coverage"] },
   {
-    name: 'Rules for react and node files',
-    files: ["**.{js,jsx,ts,tsx}"],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
+      ecmaVersion: 2020,
       globals: globals.browser,
       parserOptions: {
-        sourceType: "module",
         ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },
+        sourceType: "module",
       },
     },
     plugins: {
@@ -31,7 +31,6 @@ export default [
       "force-theme-colors": forceThemeColors,
     },
     rules: {
-      ...js.configs.all.rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
