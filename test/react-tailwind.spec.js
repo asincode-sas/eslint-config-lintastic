@@ -9,7 +9,7 @@ describe('React Tailwind', () => {
     
     const [react, tests] = reactTailwind;
 
-    assert.equal(reactTailwind.length, 2, 'No tiene los bloques requeridos');
+    assert.equal(reactTailwind.length, 4, 'No tiene los bloques requeridos');
     assert.ok(react, 'No cuenta con el bloque de React');
     assert.ok(tests, 'No cuenta con el bloque de Testing');
 
