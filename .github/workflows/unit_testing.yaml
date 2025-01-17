@@ -17,7 +17,6 @@ jobs:
     steps:
       - name: 🛎 Checkout Repository
         uses: actions/checkout@v4
-        with:
       
       # Setup LCOV CLI
       - name: 📦 Setup LCOV
