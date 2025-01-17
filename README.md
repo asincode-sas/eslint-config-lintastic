@@ -40,7 +40,7 @@ export { react as default } from 'eslint-config-lintastic';
 ```
 
 
-| Configuraciones disponibles: `react`, `reactTailwind`, `reactBoostrap`, `node`, `nodeExpress` 
+| Configuraciones disponibles: `react`, `reactTailwind`, `node` y `node` para proyectos de sólo pruebas
 
 ## Uso
 
