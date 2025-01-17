@@ -1,4 +1,4 @@
-import tailwindcss from "eslint-plugin-tailwindcss";
+import tailwind from "eslint-plugin-tailwindcss";
 import eslintPluginReadableTailwind from "eslint-plugin-readable-tailwind";
 
 import base from "./react.js";
