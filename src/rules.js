@@ -30,19 +30,16 @@ export const rulesJS = {
       ],
     },
   ],
-  //Verificacion adicional para los JSDoc
-  "jsdoc/check-alignment": "warn", //Alineacion de los comentarios
-  "jsdoc/check-param-names": "error", //Nombre de paramentros correcto
-  "jsdoc/check-tag-names": "error", //Etiquetas validas
-  "jsdoc/check-types": "warn", //Tipos de parametros y retornos validos
-  "jsdoc/require-param": "error", //Documentacion de parametros requerida
-  "jsdoc/require-param-description": "warn", //Descripcion para cada parametro
-  "jsdoc/require-param-type": "error", //Tipo requerido para cada parametro
-  "jsdoc/require-returns": "error", //Documentacion de valor de retorno requerida
-  "jsdoc/require-returns-description": "warn", //Descripcion para el retorno
-  "jsdoc/require-returns-type": "error", //Tipo requerido para el retorno
-  "jsdoc/require-jsdoc": "off",
-  "jsdoc/require-example": "off",
+  "jsdoc/check-alignment": "warn",
+  "jsdoc/check-param-names": "error",
+  "jsdoc/check-tag-names": "error",
+  "jsdoc/check-types": "warn",
+  "jsdoc/require-param": "error",
+  "jsdoc/require-param-description": "warn",
+  "jsdoc/require-param-type": "error",
+  "jsdoc/require-returns": "error",
+  "jsdoc/require-returns-description": "warn",
+  "jsdoc/require-returns-type": "error", 
   "no-restricted-imports": [
     "error",
     {
