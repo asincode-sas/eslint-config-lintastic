@@ -25,7 +25,7 @@ Para usar `lintastic` en tu proyecto, sigue estos pasos:
 npm install --save-dev eslint https://github.com/asincode-sas/eslint-config-lintastic.git
 ```
 
-2. **Crea o modifica  el archivo de configuración (`.eslint.config.js`) en la raíz de tu proyecto y extiende la configuración:**
+2. **Crea o modifica  el archivo de configuración (`eslint.config.js`) en la raíz de tu proyecto y extiende la configuración:**
 
 ```javascript
 // Extendida
