@@ -54,5 +54,12 @@
     "functions": 0,
     "lines": 0,
     "statements": 0
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "bugs": {
+    "url": "https://github.com/asincode-sas/eslint-config-lintastic/issues"
+  },
+  "homepage": "https://github.com/asincode-sas/eslint-config-lintastic#readme"
 }

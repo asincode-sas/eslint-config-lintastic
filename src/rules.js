@@ -39,7 +39,7 @@ export const rulesJS = {
   "jsdoc/require-param-type": "error",
   "jsdoc/require-returns": "error",
   "jsdoc/require-returns-description": "warn",
-  "jsdoc/require-returns-type": "error", 
+  "jsdoc/require-returns-type": "error",
   "no-restricted-imports": [
     "error",
     {
@@ -79,12 +79,34 @@ export const rulesJS = {
         {
           name: "sort-by",
           message: "El uso de 'sort-by' no está recomendado. Considera implementar funciones nativas de ordenación o usar alternativas modernas."
+        },
+        {
+          "name": "react-data-table-component",
+          "message": "El uso de 'react-data-table-component' no está recomendado por su peso y complejidad en proyectos que requieren alta performance. Implementa tablas con React nativo o librerías más livianas como 'TanStack Table'."
+        },
+        {
+          "name": "datatables",
+          "message": "Evita usar 'DataTables' debido a su peso excesivo y enfoque obsoleto en jQuery. Usa librerías más livianas como 'TanStack Table'."
+        },
+        {
+          "name": "http-errors",
+          "message": "Evita usar 'http-errors'. Implementa tus propios errores HTTP personalizados o utiliza clases de error nativas en Node.js para mayor control y flexibilidad."
+        },
+        {
+          "name": "sinon",
+          "message": "El uso de 'sinon.js' no está recomendado. Usa APIs de prueba nativas de Node.js o herramientas más modernas como Vitest o Mock Service Worker (MSW)."
         }
       ],
-      patterns: [{
-        group: ["../*"],
-        message: "Evita usar rutas relativas como '../'. Usa los alias definidos en el proyecto para mejorar la claridad y consistencia."
-      }]
+      patterns: [
+        {
+          "group": ["jquery*", ".*jquery.*"],
+          "message": "Evita usar 'jQuery' y sus variaciones ('jquery-ui', 'jquery-mobile', etc.). Usa JavaScript nativo o frameworks modernos como React, Angular o Vue. Consulta https://youmightnotneedjquery.com/."
+        },
+        {
+          group: ["../*"],
+          message: "Evita usar rutas relativas como '../'. Usa los alias definidos en el proyecto para mejorar la claridad y consistencia."
+        }
+      ]
     }
   ]
 };
