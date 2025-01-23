@@ -21,7 +21,8 @@ export default [
       ...eslintPluginReadableTailwind.configs.error.rules,
 
       // or configure rules individually
-      "readable-tailwind/multiline": ["warn", { printWidth: 100 }]
+      "readable-tailwind/multiline": "off",
+      "eslint-plugin-tailwindcss/classnames-order": "off"
     }
   },
   ...tailwind.configs["flat/recommended"],

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { reactTailwind } from "../config/index.js"
+import { reactTailwind } from "../../config/index.js"
 
 describe('React Tailwind', () => {
   it('Sould have well formed config', () => {
@@ -14,7 +14,7 @@ describe('React Tailwind', () => {
     assert.ok(tests, 'No cuenta con el bloque de Testing');
 
     const { plugins, rules, settings } = react;
- 
+
     // Validación de plugins
     assert.ok(plugins['react'], 'No cuenta con el el plugin de react');
     assert.ok(plugins['readable-tailwind'], 'No cuenta con el el plugin de readable-tailwind');
@@ -23,8 +23,7 @@ describe('React Tailwind', () => {
 
     // Validación de reglas más importantes:
     assert.ok(rules, 'No tiene las reglas definidas');
-    assert.ok(rules['no-unused-vars'], 'No cuenta con la regla no-unused-vars');
-    assert.ok(rules['no-useless-catch'], 'No cuenta con la regla no-useless-catch');
+    assert.deepStrictEqual(rules['react/jsx-no-useless-fragment'], ['error', { allowExpressions: true }]);
 
     // Validación de settings
     assert.ok(settings, 'No tiene las el objeto settings');

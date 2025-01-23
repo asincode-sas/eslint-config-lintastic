@@ -7,12 +7,12 @@ import forceThemeColors from "eslint-plugin-force-theme-colors";
 
 import plugins from "#plugins.js";
 import rules from "#rules.js"
-import tests from './tests.js';
+import tests from "./tests.js";
 
 /** @type {import("eslint").Linter.Config[]} */
 export default [
   {
-    name: 'Rules for react and node files',
+    name: "Rules for react and node files",
     files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
@@ -35,7 +35,9 @@ export default [
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
-      "react/jsx-no-target-blank": "off"
+      "react/jsx-no-target-blank": "off",
+      "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
+      "react/prop-types": "off",
     },
     settings: {
       react: {

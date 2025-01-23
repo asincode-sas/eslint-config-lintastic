@@ -2,12 +2,25 @@ import js from "@eslint/js";
 
 export const rulesJS = {
   ...js.configs.all.rules,
+  // Reglas generales
   eqeqeq: "error",
   strict: ["error", "global"],
   "no-console": "off",
   "no-var": "error",
   "prefer-const": "error",
-  'no-useless-catch': 'error',
+  "arrow-body-style": "off",
+  "no-magic-numbers": "off",
+  "no-inline-comments": "off",
+  "no-ternary": "off",
+  "one-var": "off",
+  "sort-keys": "off",
+  "complexity": ["error", { max: 3, variant: "modified" }],
+  "max-lines-per-function": [
+    "error",
+    { max: 150, skipBlankLines: true, skipComments: true, IIFEs: true }
+  ],
+
+  // Variables y argumentos
   "no-unused-vars": [
     "error",
     {
@@ -15,9 +28,16 @@ export const rulesJS = {
       args: "after-used",
       ignoreRestSiblings: false,
       varsIgnorePattern: "^_",
-      argsIgnorePattern: "^_"
-    }
+      argsIgnorePattern: "^_",
+    },
   ],
+  "no-useless-catch": "error",
+
+  // JSDoc
+  "jsdoc/check-alignment": "warn",
+  "jsdoc/check-param-names": "error",
+  "jsdoc/check-tag-names": "error",
+  "jsdoc/check-types": "warn",
   "jsdoc/require-example": [
     "error",
     {
@@ -30,10 +50,6 @@ export const rulesJS = {
       ],
     },
   ],
-  "jsdoc/check-alignment": "warn",
-  "jsdoc/check-param-names": "error",
-  "jsdoc/check-tag-names": "error",
-  "jsdoc/check-types": "warn",
   "jsdoc/require-param": "error",
   "jsdoc/require-param-description": "warn",
   "jsdoc/require-param-type": "error",
@@ -57,10 +73,6 @@ export const rulesJS = {
           message: "Evita usar 'jest'. Consulta https://pawelgrzybek.com/you-might-not-need-jest-the-node-js-native-test-runner-is-great/ para saber más"
         },
         {
-          name: "jquery",
-          message: "El uso de 'jQuery' ya no se recomienda. Usa vanilla JavaScript o frameworks modernos como React o Vue. Consulta https://youmightnotneedjquery.com/."
-        },
-        {
           name: "lodash",
           message: "El uso de 'lodash' no está recomendado. Consulta https://youmightnotneed.com/lodash para ejemplos de reemplazo."
         },
@@ -81,26 +93,22 @@ export const rulesJS = {
           message: "El uso de 'sort-by' no está recomendado. Considera implementar funciones nativas de ordenación o usar alternativas modernas."
         },
         {
-          "name": "react-data-table-component",
-          "message": "El uso de 'react-data-table-component' no está recomendado por su peso y complejidad en proyectos que requieren alta performance. Implementa tablas con React nativo o librerías más livianas como 'TanStack Table'."
+          name: "http-errors",
+          message: "Evita usar 'http-errors'. Implementa tus propios errores HTTP personalizados o utiliza clases de error nativas en Node.js para mayor control y flexibilidad."
         },
         {
-          "name": "datatables",
-          "message": "Evita usar 'DataTables' debido a su peso excesivo y enfoque obsoleto en jQuery. Usa librerías más livianas como 'TanStack Table'."
-        },
-        {
-          "name": "http-errors",
-          "message": "Evita usar 'http-errors'. Implementa tus propios errores HTTP personalizados o utiliza clases de error nativas en Node.js para mayor control y flexibilidad."
-        },
-        {
-          "name": "sinon",
-          "message": "El uso de 'sinon.js' no está recomendado. Usa APIs de prueba nativas de Node.js o herramientas más modernas como Vitest o Mock Service Worker (MSW)."
+          name: "sinon",
+          message: "El uso de 'sinon.js' no está recomendado. Usa APIs de prueba nativas de Node.js o herramientas más modernas como Vitest o Mock Service Worker (MSW)."
         }
       ],
       patterns: [
         {
-          "group": ["jquery*", ".*jquery.*"],
-          "message": "Evita usar 'jQuery' y sus variaciones ('jquery-ui', 'jquery-mobile', etc.). Usa JavaScript nativo o frameworks modernos como React, Angular o Vue. Consulta https://youmightnotneedjquery.com/."
+          group: ["datatables*", "react-data-table-component"],
+          message: "Evita usar 'Datatables' y sus variaciones ya que continenen jQuery y no está aprobado su uso."
+        },
+        {
+          group: ["jquery*", ".*jquery.*", "$", "jQuery"],
+          message: "Evita usar 'jQuery' y sus variaciones ('jquery-ui', 'jquery-mobile', etc.). Usa JavaScript nativo o React, Angular. Consulta https://youmightnotneedjquery.com/."
         },
         {
           group: ["../*"],

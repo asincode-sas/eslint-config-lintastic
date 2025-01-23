@@ -1,7 +1,7 @@
 /** @type {import("eslint").Linter.Config[]} */
 export default [
   {
-    name: 'Rules for test files',
+    name: 'tests',
     files: ["{test,tests}/**/*.{js,ts}"],
     languageOptions: {
       globals: {
