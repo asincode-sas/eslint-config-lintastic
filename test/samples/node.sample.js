@@ -1,0 +1,13 @@
+const x =  5; // Error: espaciado incorrecto alrededor del operador
+
+let  y = "hello"; // Error: espaciado incorrecto en la asignación
+
+var z = 10; // Advertencia: uso de 'var' en lugar de 'let' o 'const'
+
+if (x  == 5) { // Error: espaciado incorrecto alrededor del operador de comparación
+    console.log("x es 5");
+}
+
+function hello() {
+    console.log("Hello, World");
+  }  // Advertencia: sangría incorrecta (debe ser consistente)

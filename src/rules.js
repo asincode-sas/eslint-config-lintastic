@@ -5,20 +5,25 @@ export const rulesJS = {
   // Reglas generales
   eqeqeq: "error",
   strict: ["error", "global"],
+  curly: "off",
+  "complexity": ["error", { max: 6, variant: "modified" }],
+  "id-length": "off",
+  "init-declarations": "off",
   "no-console": "off",
   "no-var": "error",
   "prefer-const": "error",
   "arrow-body-style": "off",
   "no-magic-numbers": "off",
+  "no-negated-condition": "off",
   "no-inline-comments": "off",
   "no-ternary": "off",
-  "one-var": "off",
-  "sort-keys": "off",
-  "complexity": ["error", { max: 3, variant: "modified" }],
   "max-lines-per-function": [
     "error",
     { max: 150, skipBlankLines: true, skipComments: true, IIFEs: true }
   ],
+  "one-var": "off",
+  "require-unicode-regexp": "off",
+  "sort-keys": "off",
 
   // Variables y argumentos
   "no-unused-vars": [
@@ -56,6 +61,13 @@ export const rulesJS = {
   "jsdoc/require-returns": "error",
   "jsdoc/require-returns-description": "warn",
   "jsdoc/require-returns-type": "error",
+  "no-restricted-syntax": [
+    "error",
+    {
+      "selector": "CallExpression[callee.name='axios'][arguments.0.type='Literal'][arguments.0.value^='http']",
+      "message": "No se permite usar axios con una URL directamente. Usa una instancia creada con axios.create()."
+    }
+  ],
   "no-restricted-imports": [
     "error",
     {
@@ -101,6 +113,25 @@ export const rulesJS = {
           message: "El uso de 'sinon.js' no está recomendado. Usa APIs de prueba nativas de Node.js o herramientas más modernas como Vitest o Mock Service Worker (MSW)."
         }
       ],
+      // "no-console-only-catch": {
+      //   create(context) {
+      //     return {
+      //       CatchClause(node) {
+      //         if (
+      //           node.body.body.length === 1 &&
+      //           node.body.body[0].type === "ExpressionStatement" &&
+      //           node.body.body[0].expression.callee &&
+      //           node.body.body[0].expression.callee.object.name === "console"
+      //         ) {
+      //           context.report({
+      //             node,
+      //             message: "No utilices `console` como único manejo de errores en `catch`."
+      //           });
+      //         }
+      //       }
+      //     };
+      //   }
+      // },
       patterns: [
         {
           group: ["datatables*", "react-data-table-component"],
@@ -120,9 +151,9 @@ export const rulesJS = {
 };
 
 export const rulesTS = {
-  '@typescript-eslint/no-empty-function': 0,
-  '@typescript-eslint/no-explicit-any': 0,
-  '@typescript-eslint/no-unused-vars': 0,
+  "@typescript-eslint/no-empty-function": 0,
+  "@typescript-eslint/no-explicit-any": 0,
+  "@typescript-eslint/no-unused-vars": 0,
 };
 
 export default {
