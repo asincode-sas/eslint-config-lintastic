@@ -2,7 +2,7 @@
   "name": "eslint-config-lintastic",
   "version": "1.2.5",
   "description": "Eslint Remoto con las reglas unificadas de Asincode",
-  "main": "config/index.js",
+  "main": "lib/index.js",
   "type": "module",
   "scripts": {
     "lint": "eslint .",
@@ -18,7 +18,7 @@
   },
   "files": [
     "src/*",
-    "config/*"
+    "lib/*"
   ],
   "repository": {
     "type": "git",
