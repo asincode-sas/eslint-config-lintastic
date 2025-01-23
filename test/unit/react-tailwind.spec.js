@@ -5,15 +5,15 @@ import reactTailwind from "#lib/react-tailwind";
 
 describe("React Tailwind", () => {
   it("Sould have well formed config", () => {
-    const [react, tailwindBase, tailwindRules, tests] = reactTailwind;
+    const [base, tests] = reactTailwind;
 
-    assert.equal(reactTailwind.length, 4, "No tiene los bloques requeridos");
-    assert.ok(react, "No cuenta con el bloque de React");
-    assert.ok(tailwindBase, "No cuenta con el bloque de tailwindcss:base");
-    assert.ok(tailwindRules, "No cuenta con el bloque de tailwindcss:rules");
-    assert.ok(tests, "No cuenta con el bloque de Testing");
+    assert.equal(reactTailwind.length, 3, "No tiene los bloques requeridos");
+    assert.ok(base, "No cuenta con el bloque de react:tailwindcss");
+    assert.ok(tests, "No cuenta con el bloque de node:tests");
 
-    const { settings } = react;
+    const { settings, rules } = base;
+
+    assert.equal(rules["readable-tailwind/multiline"], "off")
 
     // Validación de settings
     assert.ok(settings, "No tiene las el objeto settings");
