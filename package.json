@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "node --run lint -- --fix",
     "test": "node --import ./test/setupTest.js --test",
+    "test:integration": "node run --test ./test/integration/*",
     "test:watch": "node --run test -- --watch",
     "test:coverage": "npx c8 npm test"
   },
@@ -29,6 +30,7 @@
   "license": "MIT",
   "dependencies": {
     "@html-eslint/parser": "^0.33.0",
+    "@stylistic/eslint-plugin-js": "^2.13.0",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
     "eslint-plugin-html": "^8.1.2",
     "eslint-plugin-jsdoc": "^50.6.0",

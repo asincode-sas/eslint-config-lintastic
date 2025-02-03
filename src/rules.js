@@ -19,7 +19,7 @@ export const rulesJS = {
   "no-ternary": "off",
   "max-lines-per-function": [
     "error",
-    { max: 150, skipBlankLines: true, skipComments: true, IIFEs: true }
+    { max: 25, skipBlankLines: true, skipComments: true, IIFEs: true }
   ],
   "one-var": "off",
   "require-unicode-regexp": "off",
@@ -37,6 +37,9 @@ export const rulesJS = {
     },
   ],
   "no-useless-catch": "error",
+
+  // stylistic
+  '@stylistic/js/indent': ['error', 2],
 
   // JSDoc
   "jsdoc/check-alignment": "warn",

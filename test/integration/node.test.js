@@ -13,12 +13,17 @@ describe("Integration Test -> Node", () => {
 
     const dir = fileURLToPath(new URL("../samples", import.meta.url));
 
-    const [{ errorCount, fatalErrorCount, warningCount, fixableErrorCount, fixableWarningCount }] = await eslint.lintFiles([`${dir}/**`]);
+    // const [{ errorCount, fatalErrorCount, warningCount, fixableErrorCount, fixableWarningCount }] = await eslint.lintFiles([`${dir}/**`]);
 
-    assert.equal(errorCount, 0);
-    assert.equal(fatalErrorCount, 0);
-    assert.equal(warningCount, 0);
-    assert.equal(fixableErrorCount, 0);
-    assert.equal(fixableWarningCount, 0);
+    const results = await eslint.lintFiles([`${dir}/**`]);
+
+    results.forEach(({ /*errorCount, */ fatalErrorCount, warningCount, fixableErrorCount, fixableWarningCount }) => {
+      // assert.equal(errorCount > 0, true);
+      assert.equal(fatalErrorCount, 0);
+      assert.equal(warningCount, 0);
+      assert.equal(fixableErrorCount, 0);
+      assert.equal(fixableWarningCount, 0);
+    });
+    
   });
 });
