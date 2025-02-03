@@ -65,31 +65,21 @@ npm run lint
 ### Tailwind con clases adicionales permitidas
 
 ```javascript
-import path from 'path';
-import { fileURLToPath } from 'node:url';
-
 import { reactTailwind } from 'eslint-config-lintastic';
 
-const [ignore, ruleset] = reactTailwind;
-
-ruleset.settings = {
-  ...ruleset.settings,
-  react: { version: '18.3' },
-};
-
-ruleset.rules = {
-  ...ruleset.rules,
-  'tailwindcss/no-custom-classname': [
-    'error',
-    {
-      config: path.join(
-        path.dirname(fileURLToPath(import.meta.url)),
-        './tailwind.config.js'
-      ),
-      whitelist: ['fa-', '^fa-[a-z-]+$', 'show', 'hide', 'loader'],
-    },
-  ],
-};
-
-export default [ignore, ruleset];
+export default [...reactTailwind, {
+  name: "tailwindcss:custom",
+  rules: {
+    'tailwindcss/no-custom-classname': [
+      'error',
+      {
+        config: path.join(
+          path.dirname(fileURLToPath(import.meta.url)),
+          './tailwind.config.js'
+        ),
+        whitelist: ['fa-', '^fa-[a-z-]+$', 'show', 'hide', 'loader'],
+      },
+    ]
+  }
+}];
 ```

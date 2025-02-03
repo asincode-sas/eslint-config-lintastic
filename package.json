@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-lintastic",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Eslint Remoto con las reglas unificadas de Asincode",
   "main": "lib/index.js",
   "type": "module",
@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "node --run lint -- --fix",
     "test": "node --import ./test/setupTest.js --test",
+    "test:integration": "node run --test ./test/integration/*",
     "test:watch": "node --run test -- --watch",
     "test:coverage": "npx c8 npm test"
   },
@@ -28,12 +29,15 @@
   "author": "Habid Manzur <hmanzur>",
   "license": "MIT",
   "dependencies": {
+    "@html-eslint/parser": "^0.33.0",
+    "@stylistic/eslint-plugin-js": "^2.13.0",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "eslint-plugin-html": "^8.1.2",
     "eslint-plugin-jsdoc": "^50.6.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
-    "eslint-plugin-readable-tailwind": "^1.8.2",
+    "eslint-plugin-readable-tailwind": "^1.9.0",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "extensionless": "^1.9.9",
     "typescript-eslint": "^8.18.0"

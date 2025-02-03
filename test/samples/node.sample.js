@@ -9,5 +9,13 @@ if (x  == 5) { // Error: espaciado incorrecto alrededor del operador de comparac
 }
 
 function hello() {
-    console.log("Hello, World");
+        console.log("Hello, World");
   }  // Advertencia: sangría incorrecta (debe ser consistente)
+
+
+const unOrderedObject = {
+    a: 1,
+    c: 2,
+    d: 3,
+    b: 4
+}
