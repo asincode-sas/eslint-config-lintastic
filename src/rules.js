@@ -76,6 +76,10 @@ export const rulesJS = {
     {
       paths: [
         {
+          name: "@types/axios",
+          message: "No se permite importar '@types/axios'. Usa la definición de tipos incluida en axios."
+        },
+        {
           name: "date-fns",
           message: "El uso de 'date-fns' no está recomendado. Consulta https://youmightnotneed.com/date-fns para alternativas más ligeras o nativas."
         },
@@ -116,25 +120,6 @@ export const rulesJS = {
           message: "El uso de 'sinon.js' no está recomendado. Usa APIs de prueba nativas de Node.js o herramientas más modernas como Vitest o Mock Service Worker (MSW)."
         }
       ],
-      // "no-console-only-catch": {
-      //   create(context) {
-      //     return {
-      //       CatchClause(node) {
-      //         if (
-      //           node.body.body.length === 1 &&
-      //           node.body.body[0].type === "ExpressionStatement" &&
-      //           node.body.body[0].expression.callee &&
-      //           node.body.body[0].expression.callee.object.name === "console"
-      //         ) {
-      //           context.report({
-      //             node,
-      //             message: "No utilices `console` como único manejo de errores en `catch`."
-      //           });
-      //         }
-      //       }
-      //     };
-      //   }
-      // },
       patterns: [
         {
           group: ["datatables*", "react-data-table-component"],
