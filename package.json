@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-lintastic",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Eslint Remoto con las reglas unificadas de Asincode",
   "main": "lib/index.js",
   "type": "module",
