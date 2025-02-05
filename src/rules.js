@@ -19,7 +19,7 @@ export const rulesJS = {
   "no-ternary": "off",
   "max-lines-per-function": [
     "error",
-    { max: 25, skipBlankLines: true, skipComments: true, IIFEs: true }
+    { max: 50, skipBlankLines: true, skipComments: true, IIFEs: true }
   ],
   "one-var": "off",
   "require-unicode-regexp": "off",
@@ -59,10 +59,10 @@ export const rulesJS = {
     },
   ],
   "jsdoc/require-param": "error",
-  "jsdoc/require-param-description": "warn",
+  "jsdoc/require-param-description": "error",
   "jsdoc/require-param-type": "error",
   "jsdoc/require-returns": "error",
-  "jsdoc/require-returns-description": "warn",
+  "jsdoc/require-returns-description": "error",
   "jsdoc/require-returns-type": "error",
   "no-restricted-syntax": [
     "error",

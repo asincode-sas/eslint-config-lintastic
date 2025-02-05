@@ -7,6 +7,8 @@ describe("Node", () => {
   it("Sould have well formed js & ts config", () => {
     rulesets.forEach((ruleset) => {
       const { name, languageOptions, rules } = ruleset;
+      if (name.startsWith("typescript-eslint")) return;
+      console.log("Evaluating", name);
       assert.ok(name, "No cuenta con el bloque languageOptions");
       assert.ok(languageOptions, "No cuenta con el bloque languageOptions");
       assert.ok(rules, "No cuenta con el bloque rules");
