@@ -80,6 +80,10 @@ export const rulesJS = {
           message: "No se permite importar '@types/axios'. Usa la definición de tipos incluida en axios."
         },
         {
+          name: "@testing-library/jest-dom",
+          message: "Evita usar '@testing-library/jest-dom' ya que depende de Jest. Considera utilizar soluciones nativas de Node.js para pruebas o alternativas modernas para Front como Vitest."
+        },
+        {
           name: "date-fns",
           message: "El uso de 'date-fns' no está recomendado. Consulta https://youmightnotneed.com/date-fns para alternativas más ligeras o nativas."
         },
