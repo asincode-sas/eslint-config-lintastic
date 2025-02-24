@@ -27,19 +27,23 @@ Para usar `lintastic` en tu proyecto, sigue estos pasos:
 
 2. **Crea o modifica  el archivo de configuración (`eslint.config.js`) en la raíz de tu proyecto y extiende la configuración:**
 
-    ```javascript
-    // Extendida
-    import { react } from 'eslint-config-lintastic';
-    export default [
-      ...react,
-      // Custom config, plugins & rules
-    ];
+Configuración Extendida:
 
-    // Simplificada
-    export { react as default } from 'eslint-config-lintastic';
-    ```
+```javascript
+import { react } from 'eslint-config-lintastic';
+export default [
+  ...react,
+  // Custom config, plugins & rules
+];
+```
 
-| Configuraciones disponibles: `react`, `reactTailwind`, `node` y `node` para proyectos de sólo pruebas
+Configuración simplificada:
+
+```javascript
+export { react as default } from 'eslint-config-lintastic';
+```
+
+| Configuraciones disponibles: `react`, `reactTailwind`, `node` y `test` para proyectos de sólo pruebas
 
 ## Uso
 
