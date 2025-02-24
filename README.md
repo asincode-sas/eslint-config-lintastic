@@ -87,7 +87,7 @@ export default [...reactTailwind, {
 
 ## Reinstalación
 
-Para re `lintastic` en tu proyecto, sigue estos pasos:
+Para reinstalar `lintastic` en tu proyecto, sigue estos pasos:
 
 1. Borrando el archivo lock
 
