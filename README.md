@@ -27,23 +27,29 @@ Para usar `lintastic` en tu proyecto, sigue estos pasos:
 
 2. **Crea o modifica  el archivo de configuración (`eslint.config.js`) en la raíz de tu proyecto y extiende la configuración:**
 
-Configuración Extendida:
+    Configuración simplificada (recomendada):
 
-```javascript
-import { react } from 'eslint-config-lintastic';
-export default [
-  ...react,
-  // Custom config, plugins & rules
-];
-```
+    ```javascript
+    export { node as default } from 'eslint-config-lintastic';
+    ```
 
-Configuración simplificada:
+    Configuración Extendida:
 
-```javascript
-export { react as default } from 'eslint-config-lintastic';
-```
+    ```javascript
+    import { node } from 'eslint-config-lintastic';
 
-| Configuraciones disponibles: `react`, `reactTailwind`, `node` y `test` para proyectos de sólo pruebas
+    export default [
+      ...node,
+      {
+        name: "node:custom",
+        rules: {
+          // Add your custom rules here
+        }
+      }
+    ];
+    ```
+
+    | Configuraciones disponibles: `react`, `reactTailwind`, `node` y `test` para proyectos de sólo pruebas
 
 ## Uso
 
@@ -63,7 +69,59 @@ npm run lint
 
 ## Ejemplos
 
-### Tailwind con clases adicionales permitidas
+Aplicar configuraciones en el archivo `eslint.config.js`
+
+### Node App
+
+Configuración básica:
+
+```javascript
+export { node as default } from 'eslint-config-lintastic';
+```
+
+Configuración avanzada:
+
+```javascript
+import { node } from 'eslint-config-lintastic';
+
+export default [...node, {
+  name: "node:custom",
+  rules: {
+    // Add custom rules
+  }
+}];
+```
+
+### React Legacy (Create React App / React Scripts / Weppack)
+
+Configuración básica:
+
+```javascript
+export { react as default } from 'eslint-config-lintastic';
+```
+
+Configuración avanzada:
+
+```javascript
+import { react } from 'eslint-config-lintastic';
+
+export default [...react, {
+  name: "react:custom",
+  rules: {
+    // Add custom rules
+  }
+}];
+```
+
+### React & Tailwind
+
+Configuración básica:
+
+```javascript
+export { reactTailwind as default } from 'eslint-config-lintastic';
+```
+
+Configuración avanzada:
 
 ```javascript
 import { reactTailwind } from 'eslint-config-lintastic';
