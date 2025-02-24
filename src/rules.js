@@ -80,20 +80,12 @@ export const rulesJS = {
           message: "No se permite importar '@types/axios'. Usa la definición de tipos incluida en axios."
         },
         {
-          name: "@testing-library/jest-dom",
-          message: "Evita usar '@testing-library/jest-dom' ya que depende de Jest. Considera utilizar soluciones nativas de Node.js para pruebas o alternativas modernas para Front como Vitest."
-        },
-        {
           name: "date-fns",
           message: "El uso de 'date-fns' no está recomendado. Consulta https://youmightnotneed.com/date-fns para alternativas más ligeras o nativas."
         },
         {
           name: "dotenv",
           message: "Evita usar 'dotenv'. Usa variables de entorno nativas de Node.js mediante 'process.env' y configura tus entornos adecuadamente."
-        },
-        {
-          name: "jest",
-          message: "Evita usar 'jest'. Consulta https://pawelgrzybek.com/you-might-not-need-jest-the-node-js-native-test-runner-is-great/ para saber más"
         },
         {
           name: "lodash",
@@ -125,6 +117,10 @@ export const rulesJS = {
         }
       ],
       patterns: [
+        {
+          group: ["*jest*"],
+          message: "Evita usar 'jest' y derivados. Consulta https://pawelgrzybek.com/you-might-not-need-jest-the-node-js-native-test-runner-is-great/ para saber más"
+        },
         {
           group: ["datatables*", "react-data-table-component"],
           message: "Evita usar 'Datatables' y sus variaciones ya que continenen jQuery y no está aprobado su uso."

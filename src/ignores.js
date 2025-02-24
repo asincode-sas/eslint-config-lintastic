@@ -1,11 +1,10 @@
-
 const ignores = [
   "*.config.*",
+  "*.d.ts",
+  "*.min.js",
   "build/**",
   "coverage/**",
-  "dist/**",
-  "*.d.ts",
-  "*.min.js"
+  "dist/**"
 ];
 
 export default ignores;
