@@ -142,6 +142,13 @@ export const rulesTS = {
   "@typescript-eslint/no-empty-function": 0,
   "@typescript-eslint/no-explicit-any": 0,
   "@typescript-eslint/no-unused-vars": 0,
+  "@typescript-eslint/no-unused-vars": [
+    'warn',
+    {
+      argsIgnorePattern: '^_',
+      varsIgnorePattern: '^_'
+    }
+  ]
 };
 
 export default {

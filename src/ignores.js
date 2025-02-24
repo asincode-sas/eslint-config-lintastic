@@ -4,7 +4,8 @@ const ignores = [
   "*.min.js",
   "build/**",
   "coverage/**",
-  "dist/**"
+  "dist/**",
+  "html/**",
 ];
 
 export default ignores;
