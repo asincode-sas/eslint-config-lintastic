@@ -21,24 +21,23 @@ Para usar `lintastic` en tu proyecto, sigue estos pasos:
 
 1. **Instala las dependencias necesarias**:
 
-```bash
-npm install --save-dev eslint https://github.com/asincode-sas/eslint-config-lintastic.git
-```
+    ```bash
+    npm install --save-dev eslint https://github.com/asincode-sas/eslint-config-lintastic.git
+    ```
 
 2. **Crea o modifica  el archivo de configuración (`eslint.config.js`) en la raíz de tu proyecto y extiende la configuración:**
 
-```javascript
-// Extendida
-import { react } from 'eslint-config-lintastic';
-export default {
-  ...react,
-  // Custom config, plugins & rules
-};
+    ```javascript
+    // Extendida
+    import { react } from 'eslint-config-lintastic';
+    export default [
+      ...react,
+      // Custom config, plugins & rules
+    ];
 
-// Simplificada
-export { react as default } from 'eslint-config-lintastic';
-```
-
+    // Simplificada
+    export { react as default } from 'eslint-config-lintastic';
+    ```
 
 | Configuraciones disponibles: `react`, `reactTailwind`, `node` y `node` para proyectos de sólo pruebas
 
@@ -58,9 +57,7 @@ Luego, puedes ejecutar el linting con:
 npm run lint
 ```
 
-
 ## Ejemplos
-
 
 ### Tailwind con clases adicionales permitidas
 
@@ -83,3 +80,21 @@ export default [...reactTailwind, {
   }
 }];
 ```
+
+## Reinstalación
+
+Para re `lintastic` en tu proyecto, sigue estos pasos:
+
+1. Borrando el archivo lock
+
+    ```bash
+    rm package-lock.json
+    npm i
+    ```
+
+2. Desinstalando y reinstalando la librería
+
+    ```bash
+    npm uninstall eslint-config-lintastic
+    npm i -D eslint https://github.com/asincode-sas/eslint-config-lintastic.git
+    ```
