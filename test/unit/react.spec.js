@@ -7,7 +7,7 @@ describe("React", () => {
   it("Sould have well formed config", () => {
     const [base, tests] = react;
 
-    assert.equal(react.length, 4, "No tiene los bloques requeridos");
+    assert.equal(react.length, 10, "No tiene los bloques requeridos");
     assert.ok(base, "No cuenta con el bloque de React");
     assert.ok(tests, "No cuenta con el bloque de Testing");
 

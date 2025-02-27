@@ -17,6 +17,7 @@ export const rulesJS = {
   "no-negated-condition": "off",
   "no-inline-comments": "off",
   "no-ternary": "off",
+  "no-undefined": "error",
   "max-lines-per-function": [
     "error",
     { max: 50, skipBlankLines: true, skipComments: true, IIFEs: true }
@@ -141,7 +142,6 @@ export const rulesJS = {
 export const rulesTS = {
   "@typescript-eslint/no-empty-function": 0,
   "@typescript-eslint/no-explicit-any": 0,
-  "@typescript-eslint/no-unused-vars": 0,
   "@typescript-eslint/no-unused-vars": [
     'warn',
     {
