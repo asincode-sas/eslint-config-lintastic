@@ -111,10 +111,6 @@ export const rulesJS = {
         {
           name: "http-errors",
           message: "Evita usar 'http-errors'. Implementa tus propios errores HTTP personalizados o utiliza clases de error nativas en Node.js para mayor control y flexibilidad."
-        },
-        {
-          name: "sinon",
-          message: "El uso de 'sinon.js' no está recomendado. Usa APIs de prueba nativas de Node.js o herramientas más modernas como Vitest o Mock Service Worker (MSW)."
         }
       ],
       patterns: [
