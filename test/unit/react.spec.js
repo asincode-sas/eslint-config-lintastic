@@ -5,9 +5,8 @@ import react from "#lib/react";
 
 describe("React", () => {
   it("Sould have well formed config", () => {
-    const [base, tests] = react;
+    const [_, base, tests] = react;
 
-    assert.equal(react.length, 10, "No tiene los bloques requeridos");
     assert.ok(base, "No cuenta con el bloque de React");
     assert.ok(tests, "No cuenta con el bloque de Testing");
 

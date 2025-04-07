@@ -17,10 +17,10 @@ describe("Integration Test -> Node", () => {
 
     console.log("messages", messages);
 
-    assert.equal(errorCount, 16);
+    assert.equal(errorCount, 18);
     assert.equal(fatalErrorCount, 0);
     assert.equal(warningCount, 0);
-    assert.equal(fixableErrorCount, 8);
+    assert.equal(fixableErrorCount, 10);
     assert.equal(fixableWarningCount, 0);
   });
 });
