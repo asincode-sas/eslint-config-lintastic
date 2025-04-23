@@ -18,6 +18,7 @@ export const rulesJS = {
   'no-inline-comments': 'off',
   'no-ternary': 'off',
   'no-undefined': 'error',
+  'no-plusplus': 'off',
   'max-lines-per-function': [
     'error',
     { max: 50, skipBlankLines: true, skipComments: true, IIFEs: true }
