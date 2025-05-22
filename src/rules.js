@@ -40,6 +40,12 @@ export const rulesJS = {
   ],
   'no-useless-catch': 'error',
 
+  // React
+  'react/self-closing-comp': ['error', {
+    component: true,
+    html: true
+  }],
+
   // stylistic
   '@stylistic/js/indent': ['error', 2],
 
