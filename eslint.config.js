@@ -8,7 +8,9 @@ export default [
     name: "lintastic:base",
     languageOptions: {
       globals: {
+        ...globals.browser,
         ...globals.node,
+        ...globals.vitest,
         lint: "readonly",
       },
     },
