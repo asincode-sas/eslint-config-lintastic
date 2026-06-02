@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "lint:fix": "node --run lint -- --fix",
     "build": "tsc",
-    "test": "node --import ./test/setupTest.js --test",
+    "test": "vitest --coverage --reporter=default",
     "test:integration": "node run --test ./test/integration/*",
     "test:watch": "node --run test -- --watch",
     "test:coverage": "npx c8 npm test"
@@ -34,6 +34,9 @@
     "@eslint/config-inspector": "^3.0.4",
     "@eslint/js": "^10.0.1",
     "@html-eslint/eslint-plugin": "^0.61.0",
+    "@types/eslint-plugin-tailwindcss": "^3.17.0",
+    "@types/node": "^25.9.1",
+    "@vitest/coverage-v8": "^4.1.8",
     "eslint": "^10.4.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsdoc": "^63.0.1",
@@ -43,7 +46,8 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-react-x": "^5.8.9",
     "eslint-plugin-tailwindcss": "^3.18.3",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "^4.1.8"
   },
   "directories": {
     "lib": "lib",
