@@ -1,6 +1,6 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
-import { type Linter } from "eslint";
+import type { Linter } from "eslint";
 
 export default [
   {
