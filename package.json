@@ -4,10 +4,14 @@
   "description": "Eslint Remoto con las reglas unificadas de Asincode",
   "main": "lib/index.js",
   "type": "module",
+  "exports": {
+    "imports": "./dist/lib/index.js",
+    "types": "./dist/lib/index.d.ts"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "node --run lint -- --fix",
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "test": "vitest --coverage --reporter=default",
     "test:integration": "node run --test ./test/integration/*",
     "test:watch": "node --run test -- --watch",
@@ -46,7 +50,8 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-react-x": "^5.8.9",
     "eslint-plugin-tailwindcss": "^3.18.3",
-    "typescript": "^5.7.3",
+    "tsc-alias": "^1.8.17",
+    "typescript": "^5.9.3",
     "vitest": "^4.1.8"
   },
   "directories": {
