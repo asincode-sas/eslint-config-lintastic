@@ -40,9 +40,6 @@ export const rulesJS = {
   ],
   "no-useless-catch": "error",
 
-  // stylistic
-  "@stylistic/js/indent": ["error", 2],
-
   // JSDoc
   "jsdoc/check-alignment": "warn",
   "jsdoc/check-param-names": "error",

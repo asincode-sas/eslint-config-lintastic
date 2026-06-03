@@ -40,19 +40,6 @@ export default [
       ...reactDom.configs.strict.rules,
       ...reactHooks.configs.recommended.rules,
       "init-declarations": "off",
-      "react/jsx-no-target-blank": "off",
-      "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
-      "react/no-array-index-key": "error",
-      "react/no-unescaped-entities": 0,
-      "react/prop-types": "off",
-      "react-hooks/exhaustive-deps": "off",
-      "react/self-closing-comp": [
-        "error",
-        {
-          component: true,
-          html: true,
-        },
-      ],
     },
     settings: {
       react: {
