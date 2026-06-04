@@ -2,24 +2,25 @@
   "name": "eslint-config-lintastic",
   "version": "1.2.20",
   "description": "Eslint Remoto con las reglas unificadas de Asincode",
-  "main": "lib/index.js",
+  "main": "./dist/lib/index.js",
   "type": "module",
   "exports": {
-    "imports": "./dist/lib/index.js",
-    "types": "./dist/lib/index.d.ts"
+    ".": {
+      "import": "./dist/lib/index.js",
+      "types": "./dist/lib/index.d.ts"
+    }
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "node --run lint -- --fix",
-    "build": "tsc && tsc-alias",
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "test": "vitest --coverage --reporter=default",
     "test:integration": "node run --test ./test/integration/*",
     "test:watch": "node --run test -- --watch",
     "test:coverage": "npx c8 npm test"
   },
   "files": [
-    "src/*",
-    "lib/*"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -37,12 +38,8 @@
   "devDependencies": {
     "@eslint/config-inspector": "^3.0.4",
     "@eslint/js": "^10.0.1",
-    "@html-eslint/eslint-plugin": "^0.61.0",
-    "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "@types/node": "^25.9.1",
     "@vitest/coverage-v8": "^4.1.8",
-    "eslint": "^10.4.1",
-    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsdoc": "^63.0.1",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-react-dom": "^5.8.9",
@@ -50,6 +47,10 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "eslint-plugin-react-x": "^5.8.9",
     "eslint-plugin-tailwindcss": "^3.18.3",
+    "@html-eslint/eslint-plugin": "^0.61.0",
+    "@types/eslint-plugin-tailwindcss": "^3.17.0",
+    "eslint": "^10.4.1",
+    "eslint-config-prettier": "^10.1.8",
     "tsc-alias": "^1.8.17",
     "typescript": "^5.9.3",
     "vitest": "^4.1.8"
