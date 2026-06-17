@@ -1,6 +1,6 @@
 import { describe, test, expect } from "vitest";
 
-import react from "#lib/react";
+import react from "#lib/rules/react";
 
 describe("React", () => {
   test("Sould have well formed config", () => {

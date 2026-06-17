@@ -17,6 +17,10 @@
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
 
+    "emitDeclarationOnly": true,
+    "rewriteRelativeImportExtensions": true,
+    "allowImportingTsExtensions": true,
+
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
@@ -27,7 +31,6 @@
 
     "paths": {
       "#lib/*": ["./lib/*.ts"],
-      "#src/*": ["./src/*.ts"],
       "#test/*": ["./test/*.ts"]
     }
   },

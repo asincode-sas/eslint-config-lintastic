@@ -1,9 +1,9 @@
 // Frontend
-export { default as react } from "./react.js"
-export { default as reactTailwind } from "./react-tailwind.js"
+export { default as react } from "./rules/react.ts";
+export { default as reactTailwind } from "./rules/react-tailwind.ts";
 
 // Backend
-export { default as node } from "./node.js"
+export { default as node } from "./rules/node.ts";
 
 // Tests
-export { default as tests } from "./tests.js";
+export { default as tests } from "./rules/tests.ts";

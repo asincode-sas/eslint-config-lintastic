@@ -3,7 +3,7 @@ import { describe, test, expect } from "vitest";
 import { ESLint } from "eslint";
 import { fileURLToPath } from "url";
 
-import baseConfig from "#lib/react-tailwind";
+import baseConfig from "#lib/rules/react-tailwind";
 
 describe("Integration Test -> React Tailwind", () => {
   test("react-tailwind:base should well integrated", async () => {

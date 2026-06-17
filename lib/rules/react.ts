@@ -6,11 +6,11 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
-import plugins from "#src/plugins";
-import rules from "#src/rules";
-import tests from "#lib/tests";
-import html from "#lib/html";
-import ignores from "#src/ignores";
+import plugins from "#lib/plugins/addons";
+import rules from "#lib/rules/general";
+import tests from "#lib/rules/tests";
+import html from "#lib/rules/html";
+import ignores from "#lib/rules/ignores";
 import type { Linter } from "eslint";
 
 export default [

@@ -1,5 +1,5 @@
 import tailwindcss from "eslint-plugin-tailwindcss";
-import base from "#lib/react";
+import base from "#lib/rules/react";
 import type { Linter } from "eslint";
 
 const [jsdoc, react, ...rest] = base;
