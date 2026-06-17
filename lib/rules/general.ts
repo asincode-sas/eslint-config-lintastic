@@ -160,8 +160,3 @@ export const rulesTS = {
     },
   ],
 };
-
-export default {
-  ...rulesJS,
-  ...rulesTS,
-};

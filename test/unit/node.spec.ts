@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import rulesets from "#lib/rules/node";
+import rulesets from "#rules/node";
 
 describe("Node", () => {
   test("Sould have well formed js & ts config", () => {

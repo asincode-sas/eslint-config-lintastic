@@ -6,11 +6,11 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
-import plugins from "#lib/plugins/addons";
-import rules from "#lib/rules/general";
-import tests from "#lib/rules/tests";
-import html from "#lib/rules/html";
-import ignores from "#lib/rules/ignores";
+import plugins from "#plugins/addons";
+import { rulesJS, rulesTS } from "./general";
+import tests from "./tests";
+import html from "./html";
+import { ignores } from "./ignores";
 import type { Linter } from "eslint";
 
 export default [
@@ -35,7 +35,8 @@ export default [
       "react-refresh": reactRefresh,
     },
     rules: {
-      ...rules,
+      ...rulesJS,
+      ...rulesTS,
       ...reactX.configs.strict.rules,
       ...reactDom.configs.strict.rules,
       ...reactHooks.configs.recommended.rules,

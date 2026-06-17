@@ -1,6 +1,6 @@
 import { describe, test, expect } from "vitest";
 
-import reactTailwind from "#lib/rules/react-tailwind";
+import reactTailwind from "#rules/react-tailwind";
 
 describe("React Tailwind", () => {
   test("Sould have well formed config", () => {

@@ -1,9 +1,9 @@
 import jsdoc from "eslint-plugin-jsdoc";
 import tseslint from "typescript-eslint";
-import { rulesJS } from "./general.ts";
-import plugins from "../plugins/addons.ts";
-import ignores from "./ignores.ts";
-import tests from "./tests.ts";
+import { rulesJS, rulesTS } from "./general";
+import plugins from "#plugins/addons";
+import { ignores } from "./ignores";
+import tests from "./tests";
 import globals from "globals";
 import { defineConfig } from "eslint/config";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
@@ -23,6 +23,7 @@ export default defineConfig([
     plugins,
     rules: {
       ...(rulesJS as Record<string, unknown>),
+      ...(rulesTS as Record<string, unknown>),
       "@typescript-eslint/no-empty-function": "error",
       "@typescript-eslint/no-explicit-any": "error",
       "prettier/prettier": ["error", { endOfLine: "auto" }],

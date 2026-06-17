@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import htmlRules from "#lib/rules/html";
+import htmlRules from "#rules/html";
 
 describe("HTML", () => {
   test("Sould have well formed config", () => {

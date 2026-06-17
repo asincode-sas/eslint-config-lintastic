@@ -3,7 +3,7 @@ import { describe, test, expect } from "vitest";
 import { ESLint } from "eslint";
 import { fileURLToPath, URL } from "node:url";
 
-import baseConfig from "#lib/rules/node";
+import baseConfig from "#rules/node";
 
 describe("Integration Test -> Node", () => {
   test("node:base should well integrated", async () => {
