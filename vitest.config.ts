@@ -13,7 +13,8 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reportsDirectory: "coverage",
-      reporter: ["text", "json-summary"],
+      reporter: ['json', 'json-summary', 'text'],
+      thresholds: { statements: 90, branches: 90, functions: 90, lines: 90 },
       include: ["lib/**/*.{js,ts}"],
       exclude: [
         "*.config.*",

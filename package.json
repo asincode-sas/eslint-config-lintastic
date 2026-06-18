@@ -14,9 +14,7 @@
     "lint:fix": "node --run lint -- --fix",
     "build": "rimraf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --resolve-full-paths",
     "test": "vitest --coverage --reporter=default",
-    "test:integration": "node run --test ./test/integration/*",
-    "test:watch": "node --run test -- --watch",
-    "test:coverage": "npx c8 npm test"
+    "test:integration": "node run --test ./test/integration/*"
   },
   "files": [
     "dist"
