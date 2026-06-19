@@ -1,8 +1,8 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
-export default [
+export default defineConfig([
   {
     name: "node:tests",
     files: ["{test,tests}/**/*.{js,ts,jsx,tsx}"],
@@ -22,4 +22,4 @@ export default [
     },
   },
   ...tseslint.configs.recommended,
-] as Linter.Config[];
+]);

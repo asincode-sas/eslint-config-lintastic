@@ -1,10 +1,10 @@
 import tailwindcss from "eslint-plugin-tailwindcss";
 import base from "#rules/react.js";
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
 const [jsdoc, react, ...rest] = base;
 
-export default [
+export default defineConfig([
   jsdoc,
   {
     ...react,
@@ -38,4 +38,4 @@ export default [
     },
   },
   ...rest,
-] as Linter.Config[];
+]);

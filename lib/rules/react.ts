@@ -5,6 +5,7 @@ import reactX from "eslint-plugin-react-x";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
 import plugins from "#plugins/addons";
 import { rulesJS, rulesTS } from "./general";
@@ -13,7 +14,7 @@ import html from "./html";
 import { ignores } from "./ignores";
 import type { Linter } from "eslint";
 
-export default [
+export default defineConfig([
   jsdoc.configs["flat/recommended-error"],
   {
     files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
@@ -54,4 +55,4 @@ export default [
   {
     ignores,
   },
-] as Linter.Config[];
+] as Linter.Config[]);
