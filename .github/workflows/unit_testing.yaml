@@ -3,7 +3,7 @@ name: 🕵 Pull Request Automation
 on:
   pull_request:
     paths-ignore:
-      - '**/*.md'
+      - "**/*.md"
 
 permissions:
   contents: write
@@ -11,18 +11,55 @@ permissions:
 
 jobs:
   coverage:
-    name: PR Validation
-    uses: asincode-sas/actions/.github/workflows/test-node.yaml@main
-    with:
-      ref: ${{ github.ref }}
-    secrets: inherit
+    name: 📊 Generate Test Coverage Report
+    environment: test
+    runs-on: ${{ inputs.runner }}
+    steps:
+      - name: 🛎 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
 
-  release:
-    name: Create New Release
-    uses: asincode-sas/actions/.github/workflows/release-create.yaml@main
-    if: ${{ github.event.action == 'closed' && github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' }}
-    with:
-      ref: ${{ github.ref }}
-      head: ${{ github.event.pull_request.head.ref }}
-      body: ${{ github.event.pull_request.body }}
-    secrets: inherit
+      # Setup Node.js environment
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+
+      - name: 🩻 Identify project type
+        id: check_type
+        run: |
+          if grep -q '"vitest"' package.json; then
+            echo "IS_LEGACY=false" >> $GITHUB_ENV
+          else
+            echo "IS_LEGACY=true" >> $GITHUB_ENV
+          fi
+
+      # Install dependencies
+      - name: 📥 Install dependencies
+        run: |
+          # Create .npmrc file
+          echo "ignore-scripts=true" >> .npmrc
+
+          npm ci --silent
+
+      - name: 🕵 Run Linter
+        run: |
+          npm run lint -- \
+          --max-warnings=0 \
+          --no-inline-config \
+          --report-unused-disable-directives
+
+      - name: 🧪 Run tests with coverage
+        run: npm run test:coverage
+
+      - name: 🤖 Report code coverage
+        if: env.IS_LEGACY == 'false'
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          json-summary-path: ./coverage/coverage-summary.json
+          json-final-path: ./coverage/coverage-final.json
+          threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
