@@ -10,7 +10,6 @@ describe("Integration Test -> React Tailwind", () => {
     const eslint = new ESLint({ baseConfig });
 
     const dir = fileURLToPath(new URL("../samples", import.meta.url));
-    console.log(dir);
     const [
       {
         errorCount,

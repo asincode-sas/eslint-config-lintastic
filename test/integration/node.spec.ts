@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
 
 import { ESLint } from "eslint";
-import { fileURLToPath, URL } from "node:url";
+import { fileURLToPath } from "node:url";
 
 import baseConfig from "#rules/node";
 

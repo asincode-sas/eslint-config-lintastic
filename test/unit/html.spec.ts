@@ -3,7 +3,6 @@ import htmlRules from "#rules/html";
 
 describe("HTML", () => {
   test("Sould have well formed config", () => {
-    console.log(htmlRules);
     htmlRules.forEach((ruleset) => {
       const { name, rules } = ruleset;
       if (!name) return;
