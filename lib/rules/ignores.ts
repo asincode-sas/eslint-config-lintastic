@@ -1,4 +1,4 @@
-const ignores = [
+export const ignores = [
   "*.config.*",
   "**/*.d.ts",
   "**/*.min.js",
@@ -7,5 +7,3 @@ const ignores = [
   "dist/**",
   "html/**",
 ];
-
-export default ignores;

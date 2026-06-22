@@ -3,7 +3,7 @@ name: 🕵 Pull Request Automation
 on:
   pull_request:
     paths-ignore:
-      - '**/*.md'
+      - "**/*.md"
 
 permissions:
   contents: write
@@ -13,39 +13,53 @@ jobs:
   coverage:
     name: 📊 Generate Test Coverage Report
     environment: test
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runner }}
     steps:
       - name: 🛎 Checkout Repository
         uses: actions/checkout@v4
-      
-      # Setup LCOV CLI
-      - name: 📦 Setup LCOV
-        uses: hrishikesh-kadam/setup-lcov@v1
         with:
-          ref: v2.1
+          ref: ${{ inputs.ref }}
 
       # Setup Node.js environment
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version-file: .node-version
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
+          cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
 
-      - name: 📥 Install Dependencies
-        run: npm ci --silent
+      - name: 🩻 Identify project type
+        id: check_type
+        run: |
+          if grep -q '"vitest"' package.json; then
+            echo "IS_LEGACY=false" >> $GITHUB_ENV
+          else
+            echo "IS_LEGACY=true" >> $GITHUB_ENV
+          fi
+
+      # Install dependencies
+      - name: 📥 Install dependencies
+        run: |
+          # Create .npmrc file
+          echo "ignore-scripts=true" >> .npmrc
+
+          npm ci --silent
 
       - name: 🕵 Run Linter
-        run: npm run lint
+        run: |
+          npm run lint -- \
+          --max-warnings=0 \
+          --no-inline-config \
+          --report-unused-disable-directives
 
       - name: 🧪 Run tests with coverage
         run: npm run test:coverage
 
       - name: 🤖 Report code coverage
-        uses: zgosalvez/github-actions-report-lcov@v4
+        if: env.IS_LEGACY == 'false'
+        uses: davelosert/vitest-coverage-report-action@v2
         with:
-          coverage-files: coverage/lcov.info
-          artifact-name: coverage-report
+          json-summary-path: ./coverage/coverage-summary.json
+          json-final-path: ./coverage/coverage-final.json
+          threshold-icons: "{0: '🔴', 80: '🟠', 90: '🟢'}"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          update-comment: true
-
