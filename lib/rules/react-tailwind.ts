@@ -1,4 +1,3 @@
-import tailwindcss from "eslint-plugin-tailwindcss";
 import base from "#rules/react.js";
 import { defineConfig } from "eslint/config";
 
@@ -11,7 +10,6 @@ export default defineConfig([
     name: "react:tailwindcss",
     plugins: {
       ...react.plugins,
-      tailwindcss,
     },
     rules: {
       ...react.rules,
