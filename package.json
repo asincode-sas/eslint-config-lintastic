@@ -25,6 +25,9 @@
     "type": "git",
     "url": "git+https://github.com/asincode-sas/eslint-config-lintastic.git"
   },
+  "peerDependencies": {
+    "eslint": "^9.0.0 || ^10.0.0"
+  },
   "keywords": [],
   "author": "Habid Manzur <hmanzur>",
   "license": "MIT",
