@@ -32,6 +32,8 @@
   "author": "Habid Manzur <hmanzur>",
   "license": "MIT",
   "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "@html-eslint/eslint-plugin": "^0.62.0",
     "@html-eslint/parser": "^0.61.0",
     "@typescript-eslint/eslint-plugin": "^8.60.1",
     "eslint-config-prettier": "^10.1.8",
@@ -46,8 +48,6 @@
   },
   "devDependencies": {
     "@eslint/config-inspector": "^3.0.4",
-    "@eslint/js": "^10.0.1",
-    "@html-eslint/eslint-plugin": "^0.61.0",
     "@types/node": "^25.9.3",
     "@vitest/coverage-v8": "^4.1.8",
     "eslint": "^10.5.0",
