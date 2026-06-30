@@ -10,7 +10,6 @@ import { defineConfig } from "eslint/config";
 import plugins from "#plugins/addons";
 import { rulesJS, rulesTS } from "./general";
 import tests from "./tests";
-import html from "./html";
 import { ignores } from "./ignores";
 import type { Linter } from "eslint";
 
@@ -49,7 +48,6 @@ export default defineConfig([
       },
     },
   },
-  ...html,
   ...tseslint.configs.recommended,
   ...tests,
   {
