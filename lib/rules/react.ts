@@ -41,6 +41,8 @@ export default defineConfig([
       ...reactDom.configs.strict.rules,
       ...reactHooks.configs.recommended.rules,
       "init-declarations": "off",
+      "react-x/exhaustive-deps": "off",
+      "react-x/no-unstable-context-value": "off",
     },
     settings: {
       react: {
