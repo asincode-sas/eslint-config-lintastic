@@ -10,7 +10,6 @@ import { defineConfig } from "eslint/config";
 import plugins from "#plugins/addons";
 import { rulesJS, rulesTS } from "./general";
 import tests from "./tests";
-import html from "./html";
 import { ignores } from "./ignores";
 import type { Linter } from "eslint";
 
@@ -42,6 +41,8 @@ export default defineConfig([
       ...reactDom.configs.strict.rules,
       ...reactHooks.configs.recommended.rules,
       "init-declarations": "off",
+      "react-x/exhaustive-deps": "off",
+      "react-x/no-unstable-context-value": "off",
     },
     settings: {
       react: {
@@ -49,7 +50,6 @@ export default defineConfig([
       },
     },
   },
-  ...html,
   ...tseslint.configs.recommended,
   ...tests,
   {
