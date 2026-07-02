@@ -22,7 +22,6 @@ describe("Integration Test -> React Tailwind", () => {
 
     expect(fatalErrorCount).toBe(0);
     expect(warningCount).toBe(0);
-    
     expect(fixableWarningCount).toBe(0);
   });
 });

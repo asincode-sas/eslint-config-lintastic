@@ -21,7 +21,6 @@ jobs:
           npm run build
           
       - name: Pack Tarball
-        # This creates a file like "my-package-1.0.0.tgz" containing ONLY what goes to production
         run: npm pack
         
       - name: Create GitHub Release
