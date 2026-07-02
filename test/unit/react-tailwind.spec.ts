@@ -9,9 +9,8 @@ describe("React Tailwind", () => {
     expect(base).toBeDefined();
     expect(tests).toBeDefined();
 
-    const { settings } = base;
-
-    expect(settings).toBeDefined();
-    expect(settings?.react).toBeDefined();
+    const { rules, plugins } = base;
+    expect(rules).toBeDefined();
+    expect(plugins).toBeDefined();
   });
 });
