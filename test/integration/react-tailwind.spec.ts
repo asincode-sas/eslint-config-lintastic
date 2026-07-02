@@ -20,10 +20,10 @@ describe("Integration Test -> React Tailwind", () => {
       },
     ] = await eslint.lintFiles([`${dir}/**`]);
 
-    expect(errorCount).toBe(12);
+    expect(errorCount).toBe(49);
     expect(fatalErrorCount).toBe(0);
     expect(warningCount).toBe(0);
-    expect(fixableErrorCount).toBe(4);
+    expect(fixableErrorCount).toBe(41);
     expect(fixableWarningCount).toBe(0);
   });
 });
