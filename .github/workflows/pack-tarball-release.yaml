@@ -3,11 +3,19 @@ on:
   push:
     tags:
       - 'v*'
+      - 'main'
   workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name for manual release (e.g., v2.0.4)'
+        required: false
+        default: ''
 
 jobs:
   build_and_release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       
@@ -23,10 +31,19 @@ jobs:
           
       - name: Pack Tarball
         run: npm pack
+
+      - name: Get Package Version
+        id: package_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "pkg_version=v$VERSION" >> $GITHUB_OUTPUT
         
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.event.inputs.tag_name || github.ref_name || steps.package_version.outputs.pkg_version }}
           files: '*.tgz'
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
