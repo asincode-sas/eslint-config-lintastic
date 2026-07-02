@@ -15,7 +15,8 @@
     "build": "rimraf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --resolve-full-paths",
     "test": "vitest --coverage --reporter=default",
     "test:coverage": "vitest --coverage",
-    "test:integration": "node run --test ./test/integration/*"
+    "test:integration": "node run --test ./test/integration/*",
+    "prepare": "npm run build"
   },
   "files": [
     "dist/*"
