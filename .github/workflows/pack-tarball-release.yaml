@@ -3,9 +3,7 @@ on:
   push:
     tags:
       - 'v*'
-  pull_request:
-    branches:
-      - main
+      - 'main'
   workflow_dispatch:
     inputs:
       tag_name:
