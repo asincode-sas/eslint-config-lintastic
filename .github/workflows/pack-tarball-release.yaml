@@ -1,8 +1,9 @@
 name: Release Package
 on:
-  pull_request:
+  push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 jobs:
   build_and_release:
