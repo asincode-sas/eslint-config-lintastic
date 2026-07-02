@@ -1,0 +1,32 @@
+name: Release Package
+on:
+  pull_request:
+    tags:
+      - 'v*'
+
+jobs:
+  build_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          
+      - name: Install & Build
+        run: |
+          npm ci
+          npm run build
+          
+      - name: Pack Tarball
+        # This creates a file like "my-package-1.0.0.tgz" containing ONLY what goes to production
+        run: npm pack
+        
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: '*.tgz'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
