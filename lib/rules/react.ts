@@ -7,7 +7,6 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import { defineConfig } from "eslint/config";
 
-import plugins from "#plugins/addons";
 import { rulesJS, rulesTS } from "./general";
 import tests from "./tests";
 import { ignores } from "./ignores";
@@ -28,7 +27,7 @@ export default defineConfig([
       },
     },
     plugins: {
-      ...plugins,
+      jsdoc,
       "react-x": reactX,
       "react-dom": reactDom,
       "react-hooks": reactHooks,
