@@ -1,7 +1,6 @@
 import jsdoc from "eslint-plugin-jsdoc";
 import tseslint from "typescript-eslint";
 import { rulesJS, rulesTS } from "./general";
-import plugins from "#plugins/addons";
 import { ignores } from "./ignores";
 import tests from "./tests";
 import globals from "globals";
@@ -20,7 +19,9 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts}"],
     name: "node:base",
     languageOptions,
-    plugins,
+    plugins: {
+      jsdoc,
+    },
     rules: {
       ...(rulesJS as Record<string, unknown>),
       ...(rulesTS as Record<string, unknown>),

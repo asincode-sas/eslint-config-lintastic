@@ -13,7 +13,7 @@ jobs:
   coverage:
     name: 📊 Generate Test Coverage Report
     environment: test
-    runs-on: ${{ inputs.runner }}
+    runs-on: ubuntu-latest
     steps:
       - name: 🛎 Checkout Repository
         uses: actions/checkout@v4
